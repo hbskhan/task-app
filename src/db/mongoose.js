@@ -6,3 +6,5 @@ mongoose.connect('mongodb://127.0.0.1:27017/task-manager-api', {
     useUnifiedTopology: true,
     useFindAndModify: false
 })
+
+//"mongodb\bin\mongod.exe" --dbpath "mongodb-data"
