@@ -3,6 +3,7 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Task = require('./task')
+const { Binary } = require('mongodb')
 
 const userSchema = new mongoose.Schema({
     name:{ 
@@ -42,15 +43,14 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
+    avatar:{type: Buffer},
     tokens: [{
         token: {
             type: String,
             require: true
         }
     }]
-}, {
-    timestamps: true
-})
+}, { timestamps: true })
 
 userSchema.methods.toJSON = function() {
     const publicData = this.toObject()
