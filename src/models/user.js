@@ -87,9 +87,8 @@ userSchema.virtual('tasks', {
     localField: '_id',
     foreignField: 'owner'
 })
-
+//Check if password updated
 userSchema.pre('save', async function(next){
-    //console.log('Pre save')
     if(this.isModified('password')){
         this.password = await bcrypt.hash(this.password, 8)
     }

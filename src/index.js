@@ -7,13 +7,6 @@ require('./db/mongoose.js')
 const app = express()
 const port = process.env.PORT
 
-// app.use((req, res, next) => {
-//     if(req){
-//         res.status(503).send('Site under maintainance')
-//     }
-// })
-
-
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
